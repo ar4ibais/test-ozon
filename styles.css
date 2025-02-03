@@ -1,0 +1,165 @@
+:root {
+    --primary-color: #007bff;
+    --bg-color: #f0f4f8;
+    --progress-bg: #d9e2ec;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.progress-container {
+    position: relative;
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 280px;
+}
+
+.progress-container h1 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+}
+
+.progress-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progress-block {
+    margin: 20px auto;
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.progress-circle {
+    transform: rotate(-90deg);
+}
+
+.progress-bg {
+    fill: none;
+    stroke: var(--progress-bg);
+    stroke-width: 10;
+}
+
+.progress-bar {
+    fill: none;
+    stroke: var(--primary-color);
+    stroke-width: 10;
+    stroke-dasharray: 314; /* 2 * Math.PI * r */
+    stroke-dashoffset: 314; /* Начинаем с пустой дуги */
+    transition: stroke-dashoffset 0.3s;
+    transform-origin: 50% 50%; /* Центр вращения */
+}
+
+/* Анимация вращения */
+@keyframes rotateProgress {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.progress-block.animate .progress-bar {
+    animation: rotateProgress 2s linear infinite; /* Вращение дуги */
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Стили для инпута */
+  #value-input {
+    width: 40px;
+    height: 25px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    outline: none;
+  }
+
+  #value-input:focus {
+    border-color: #007bff;
+  }
+
+  /* Стили для тумблера */
+  .toggle {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    background: #d9e2ec;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .toggle input {
+    display: none;
+  }
+
+  .toggle .slider {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 21px;
+    height: 21px;
+    background: #fff;
+    border-radius: 50%;
+    transition: all 0.3s;
+  }
+
+  .toggle input:checked + .slider {
+    transform: translateX(25px);
+  }
+
+  .toggle input:checked {
+    background: #007bff;
+  }
+
+  /* Стили для текста */
+  .label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  @media (max-width: 400px) {
+    .progress-inner {
+        display: block;
+    }
+  }

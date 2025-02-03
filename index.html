@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Progress Block</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="progress-container">
+            <h1>Progress</h1>
+            <div class="progress-inner">
+                <div class="progress-block">
+                    <!-- SVG круг -->
+                    <svg
+                        class="progress-circle"
+                        width="120"
+                        height="120"
+                        viewBox="0 0 120 120"
+                    >
+                        <!-- Фон -->
+                        <circle class="progress-bg" cx="60" cy="60" r="50" />
+                        <!-- Дуга прогресса -->
+                        <circle class="progress-bar" cx="60" cy="60" r="50" />
+                    </svg>
+                </div>
+                <div class="controls">
+                    <div class="control">
+                        <input
+                            id="value-input"
+                            type="number"
+                            min="0"
+                            max="100"
+                        />
+                        <label for="value-input" class="label">Value</label>
+                    </div>
+
+                    <!-- Переключатель Animate -->
+                    <div class="input-group">
+                        <label class="toggle">
+                            <input type="checkbox" id="animateToggle" />
+                            <span class="slider"></span>
+                        </label>
+                        <span class="label">Animate</span>
+                    </div>
+
+                    <!-- Переключатель Hide -->
+                    <div class="input-group">
+                        <label class="toggle">
+                            <input type="checkbox" id="hideToggle" />
+                            <span class="slider"></span>
+                        </label>
+                        <span class="label">Hide</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
