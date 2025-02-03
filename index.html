@@ -10,7 +10,7 @@
         <div class="progress-container">
             <h1>Progress</h1>
             <div class="progress-inner">
-                <div class="progress-block">
+                <div class="progress-block toHide">
                     <!-- SVG круг -->
                     <svg
                         class="progress-circle"
@@ -25,18 +25,12 @@
                     </svg>
                 </div>
                 <div class="controls">
-                    <div class="control">
-                        <input
-                            id="value-input"
-                            type="number"
-                            min="0"
-                            max="100"
-                        />
+                    <div class="control toHide">
+                        <input id="value-input" />
                         <label for="value-input" class="label">Value</label>
                     </div>
 
-                    <!-- Переключатель Animate -->
-                    <div class="input-group">
+                    <div class="input-group toHide">
                         <label class="toggle">
                             <input type="checkbox" id="animateToggle" />
                             <span class="slider"></span>
@@ -44,7 +38,6 @@
                         <span class="label">Animate</span>
                     </div>
 
-                    <!-- Переключатель Hide -->
                     <div class="input-group">
                         <label class="toggle">
                             <input type="checkbox" id="hideToggle" />
